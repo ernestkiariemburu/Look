@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#19191a">
+<meta name="color-scheme" content="dark">
+<title>Ernest Kiarie — Drawings</title>
+<style>
+:root{--bg:#19191a;--card:#212122;--fg:#ebe8e2;--muted:#8e8b85;--line:#2f2f30;--accent:#cdbda6;--pad:clamp(18px,5vw,48px);color-scheme:dark;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth;background:var(--bg)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:Georgia,'Times New Roman',serif;line-height:1.6;-webkit-text-size-adjust:100%}
+.sans{font-family:system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif}
+a{color:var(--accent)}
+header{display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-between;align-items:center;padding:16px var(--pad);max-width:1240px;margin:auto;border-bottom:1px solid var(--line)}
+.logo{white-space:nowrap;text-decoration:none;color:var(--fg)}
+nav{display:flex;gap:20px}
+nav a{color:var(--muted);text-decoration:none;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase}
+nav a:hover{color:var(--fg)}
+.hero{max-width:1240px;margin:auto;padding:64px var(--pad) 36px}
+.emblem{display:block;height:clamp(96px,26vw,150px);width:auto}
+.byline{font-size:.72rem;letter-spacing:.26em;text-transform:uppercase;color:var(--muted);margin:12px 0 34px}
+.hero h1{font-size:clamp(2.1rem,8.5vw,4.4rem);font-weight:400;line-height:1.06;letter-spacing:-.01em;margin:0 0 16px;max-width:15ch}
+.hero p{max-width:44ch;color:var(--muted);font-size:1.02rem;margin:0}
+section{max-width:1240px;margin:auto;padding:44px var(--pad)}
+h2{display:flex;align-items:center;gap:14px;font:600 .72rem system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin:0 0 24px}
+h2::after{content:"";flex:1;height:1px;background:var(--line)}
+.about h2{display:block}.about h2::after{display:none}
+.filters{display:flex;gap:8px;overflow-x:auto;margin:0 calc(var(--pad)*-1) 22px;padding:0 var(--pad);scrollbar-width:none}
+.filters::-webkit-scrollbar{display:none}
+.filters button{flex:none;font:inherit;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;background:none;border:1px solid var(--line);color:var(--muted);padding:8px 14px;border-radius:99px;cursor:pointer}
+.filters button.on{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.grid{columns:3 260px;column-gap:22px}
+.card{break-inside:avoid;margin:0 0 22px;background:var(--card);border:1px solid var(--line);cursor:pointer;transition:transform .2s}
+.card:hover{transform:translateY(-3px)}
+.art{width:100%;display:block;aspect-ratio:var(--r,4/5);object-fit:cover;background:var(--ph,#3a3836);transition:opacity .2s}
+.ph{display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.7);font-style:italic;text-align:center;padding:12px}
+.meta{padding:12px 14px 14px}
+.meta b{font-weight:400;font-size:1.05rem}
+.meta small{display:block;color:var(--muted);font-size:.78rem;letter-spacing:.04em}
+.tag{display:inline-block;margin-top:6px;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);border:1px solid var(--accent);padding:1px 8px;border-radius:99px}
+.tag.sold{color:var(--muted);border-color:var(--muted)}
+.about{display:grid;grid-template-columns:1fr 1.4fr;gap:6vw;align-items:start}
+.about p{margin:0 0 1em;color:var(--muted)}
+h3{font-weight:400;font-size:1.05rem;margin:0 0 10px}
+.pay{list-style:none;padding:0;margin:0;color:var(--muted)}
+.pay li{margin:0 0 10px}
+.social{display:flex;gap:18px;justify-content:center;margin-bottom:18px}
+.social a{color:var(--fg);display:inline-flex}
+.social a:hover{color:var(--accent)}
+footer{text-align:center;color:var(--muted);font-size:.72rem;padding:36px var(--pad) 44px;border-top:1px solid var(--line);margin-top:24px}
+.buy{display:inline-block;background:var(--accent);color:#19191a;padding:10px 22px;border-radius:99px;text-decoration:none;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase}
+#lb{position:fixed;inset:0;background:rgba(18,18,19,.97);display:none;z-index:20;padding:5vh var(--pad);overflow:auto}
+#lb.open{display:block}
+#lb .in{max-width:900px;margin:auto;color:#eee}
+#lb .art{object-fit:contain;max-height:70vh;width:auto;max-width:100%;margin:auto}
+#lb h3{font-size:1.5rem;margin:16px 0 4px}
+#lb p{color:#b9b6b0;margin:6px 0}
+#lb .x{position:fixed;top:calc(14px + env(safe-area-inset-top,0px));right:18px;font-size:2rem;background:none;border:0;color:#fff;cursor:pointer}
+@media(max-width:700px){.about{grid-template-columns:1fr;gap:0}nav{width:100%;gap:18px}.hero{padding-top:44px}}
+</style>
+</head>
+<body>
+
+<header class="sans">
+  <nav><a href="#work">Work</a><a href="#about">About</a><a href="#buy">Buying</a><a href="#contact">Contact</a></nav>
+</header>
+
+<div class="hero" id="top">
+  <div id="siteName"></div>
+  <h1 id="heroTitle"></h1>
+  <p id="heroText"></p>
+</div>
+
+<section id="work">
+  <h2>Selected work</h2>
+  <div class="filters sans" id="filters"></div>
+  <div class="grid" id="grid"></div>
+</section>
+
+<section id="about">
+  <div class="about">
+    <div><h2>About</h2></div>
+    <div id="aboutText"></div>
+  </div>
+</section>
+
+<section id="buy">
+  <h2>Buying &amp; shipping</h2>
+  <div class="about">
+    <div><h3>Payment</h3><ul class="pay sans" id="payList"></ul></div>
+    <div><h3>Shipping</h3><p id="shipText"></p></div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <h2>Commissions &amp; enquiries</h2>
+  <p id="contactText" style="color:var(--muted);max-width:50ch"></p>
+  <p class="sans" id="contactLinks"></p>
+</section>
+
+<footer class="sans"><div class="social" id="social"></div><div id="foot"></div></footer>
+
+<div id="lb" role="dialog" aria-modal="true"><button class="x" id="close" aria-label="Close">&times;</button><div class="in" id="lbIn"></div></div>
+
+<script>
+/* ================================================================
+   EDIT HERE — everything on the site comes from this block.
+   ================================================================ */
+const SITE = {
+  name: "Ernest Kiarie",
+  brand: "Look",
+  logo: "look-emblem-white.png",           // your Look emblem
+  heroTitle: "Portraits and studies in graphite.",
+  heroText: "Quiet, detailed portraits and studies — made slowly, by hand.",
+  about: [
+    "I’m Ernest Kiarie, the artist behind Look. I work mostly in graphite, with touches of charcoal, pen, coloured pencil and watercolor. I'm drawn to faces, gesture and the small moments people don't notice they're having.",
+    "Each piece takes many hours. Originals and limited prints are available.",
+    "The Look mark on my drawings is my signature: a sign that the work is original and made by me."
+  ],
+  contactText: "Interested in an original, a print, or a commission? Get in touch.",
+  email: "ernestdrawings@gmail.com",
+  instagram: "https://www.instagram.com/lookbyernest/",
+  facebook: "https://www.facebook.com/share/1CLsDWraZg/",
+  youtube: "https://www.youtube.com/@lookbyernest",
+  tiktok: "https://www.tiktok.com/@ernest_kiarie",
+  payments: {                       // paste your links here once your accounts are ready; blank ones stay hidden
+    paypal: "",                   // e.g. "https://paypal.me/yourname"
+    stripe: "",                   // e.g. a Stripe Payment Link
+    zelle: "",                    // email or phone linked to Zelle (US only)
+    crypto: false,                // true shows "Crypto accepted on request"
+    shipping: "Shipped worldwide, flat-packed or rolled with tracking and insurance. Shipping is quoted per country before payment. Buyers cover any customs duties or import taxes."
+  },
+  year: new Date().getFullYear()
+};
+
+/* Add a piece = add a block. "image" can be a file name uploaded next to this page,
+   or left "" to show an elegant placeholder. status: "Available", "Sold", "In progress", or "".
+   Optional per piece: payLink:"https://..." shows a Buy now button (hidden when Sold). */
+const ARTWORKS = [
+  { title:"The Moon", year:"", medium:"Graphite", size:"", image:"moon.jpg", ratio:"1512/2016", status:"Available",
+    desc:"", color:"#6d675f" },
+  { title:"The Girl with the Curls", year:"", medium:"Coloured pencil", size:"", image:"curls.jpg", ratio:"1450/2132", status:"Available",
+    desc:"", color:"#6d675f" },
+  { title:"My Sister’s Drawing", year:"", medium:"Graphite", size:"", image:"sister.jpg", ratio:"988/1530", status:"Sold",
+    desc:"", color:"#6d675f" },
+  { title:"Yellow is a Primary Colour", year:"", medium:"Watercolor", size:"", image:"cubist.jpg", ratio:"1932/2576", status:"Available",
+    desc:"", color:"#6d675f" },
+  { title:"Portrait of Elvis Kimathi", year:"", medium:"Graphite", size:"", image:"elvis.jpg", ratio:"2320/1540", status:"Sold",
+    desc:"", color:"#6d675f" },
+  { title:"Portrait of Margaret", year:"", medium:"Graphite", size:"", image:"margaret.jpg", ratio:"793/1510", status:"Sold",
+    desc:"", color:"#6d675f" },
+  { title:"Sight Unseen", year:"", medium:"Graphite", size:"", image:"sight.jpg", ratio:"784/950", status:"Available",
+    desc:"", color:"#6d675f" },
+  { title:"Piranha 3DD Cover Drawing", year:"", medium:"Pen", size:"", image:"piranha.jpg", ratio:"2244/1683", status:"Available",
+    desc:"", color:"#6d675f" }
+];
+/* ================================================================ */
+
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+document.title = SITE.brand + " by " + SITE.name + " — Drawings";
+$("siteName").innerHTML = (SITE.logo ? '<img class="emblem" src="' + esc(SITE.logo) + '" alt="' + esc(SITE.brand) + '">' : '<div style="font-size:3rem">' + esc(SITE.brand) + '</div>') + '<div class="byline sans">by ' + esc(SITE.name) + '</div>';
+$("heroTitle").textContent = SITE.heroTitle;
+$("heroText").textContent = SITE.heroText;
+$("aboutText").innerHTML = SITE.about.map(p => "<p>" + esc(p) + "</p>").join("");
+$("contactText").textContent = SITE.contactText;
+$("contactLinks").innerHTML = (SITE.email ? '<a href="mailto:' + esc(SITE.email) + '">' + esc(SITE.email) + "</a>" : "");
+const IG='<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg>';
+const FB='<svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M13.5 22v-8.2h2.8l.5-3.3h-3.3V8.4c0-.9.3-1.6 1.7-1.6h1.7V3.9c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.4H7.4v3.3h2.8V22h3.3z"/></svg>';
+const YT='<svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M21.6 7.2a2.5 2.5 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4A2.5 2.5 0 0 0 2.4 7.2C2 8.8 2 12 2 12s0 3.2.4 4.8a2.5 2.5 0 0 0 1.8 1.8C5.8 19 12 19 12 19s6.2 0 7.8-.4a2.5 2.5 0 0 0 1.8-1.8c.4-1.6.4-4.8.4-4.8s0-3.2-.4-4.8zM10 15V9l5.2 3L10 15z"/></svg>';
+const TT='<svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M16.6 3c.3 2.3 1.6 3.7 3.9 3.9v3.1c-1.4.1-2.7-.3-3.9-1.1v6.1c0 3.9-3.2 6-6.3 5.4-2.6-.5-4.4-2.8-4.1-5.5.3-2.8 2.8-4.7 5.6-4.3v3.2c-1.4-.4-2.8.5-2.9 1.9-.1 1.5 1.3 2.6 2.7 2.2 1-.3 1.5-1.1 1.5-2.2V3h3.5z"/></svg>';
+$("social").innerHTML = (SITE.instagram ? '<a href="' + esc(SITE.instagram) + '" target="_blank" rel="noopener" aria-label="Instagram">' + IG + '</a>' : "") +
+  (SITE.facebook ? '<a href="' + esc(SITE.facebook) + '" target="_blank" rel="noopener" aria-label="Facebook">' + FB + '</a>' : "") +
+  (SITE.youtube ? '<a href="' + esc(SITE.youtube) + '" target="_blank" rel="noopener" aria-label="YouTube">' + YT + '</a>' : "") +
+  (SITE.tiktok ? '<a href="' + esc(SITE.tiktok) + '" target="_blank" rel="noopener" aria-label="TikTok">' + TT + '</a>' : "");
+$("foot").textContent = "© " + SITE.year + " " + SITE.brand + " · " + SITE.name + ". All artwork is copyrighted; don’t reproduce without permission.";
+
+function artEl(a, cls){
+  const style = "--r:" + (a.ratio || "4/5") + ";--ph:" + (a.color || "#c9c2b8");
+  return a.image
+    ? '<img class="art ' + cls + '" style="' + style + '" src="' + esc(a.image) + '" alt="' + esc(a.title) + '" loading="lazy">'
+    : '<div class="art ph ' + cls + '" style="' + style + '">' + esc(a.title) + "</div>";
+}
+
+let current = "All";
+function render(){
+  const media = ["All", ...new Set(ARTWORKS.map(a => a.medium).filter(Boolean)), ...(ARTWORKS.some(a => a.status === "Sold") ? ["Sold"] : [])];
+  $("filters").innerHTML = media.map(m => '<button class="' + (m === current ? "on" : "") + '" data-m="' + esc(m) + '">' + esc(m) + "</button>").join("");
+  const list = ARTWORKS.map((a, i) => ({a, i})).filter(o => current === "All" || (current === "Sold" ? o.a.status === "Sold" : o.a.medium === current));
+  $("grid").innerHTML = list.map(o =>
+    '<figure class="card" data-i="' + o.i + '">' + artEl(o.a, "") +
+    '<div class="meta"><b>' + esc(o.a.title) + "</b><small class='sans'>" + esc([o.a.medium, o.a.size, o.a.year].filter(Boolean).join(" · ")) + "</small>" +
+    (o.a.status ? '<span class="tag sans' + (o.a.status === "Sold" ? ' sold' : '') + '">' + esc(o.a.status) + "</span>" : "") + "</div></figure>").join("");
+}
+$("filters").addEventListener("click", e => { const m = e.target.dataset.m; if(m){ current = m; render(); } });
+$("grid").addEventListener("click", e => { const c = e.target.closest(".card"); if(c) openLb(+c.dataset.i); });
+
+function openLb(i){
+  const a = ARTWORKS[i];
+  $("lbIn").innerHTML = artEl(a, "") + "<h3>" + esc(a.title) + "</h3><p class='sans'>" +
+    esc([a.medium, a.size, a.year].filter(Boolean).join(" · ")) + (a.status ? " — " + esc(a.status) : "") + "</p><p>" + esc(a.desc) + "</p>" +
+    (a.payLink && a.status !== "Sold" ? '<p class="sans"><a class="buy" href="' + esc(a.payLink) + '" target="_blank" rel="noopener">Buy now</a></p>' : "") + (SITE.email ? '<p class="sans"><a style="color:#cdbda6" href="mailto:' + esc(SITE.email) + "?subject=" + encodeURIComponent("Enquiry: " + a.title) + '">Enquire about this piece</a></p>' : "");
+  $("lb").classList.add("open");
+}
+const closeLb = () => $("lb").classList.remove("open");
+$("close").onclick = closeLb;
+$("lb").addEventListener("click", e => { if(e.target.id === "lb") closeLb(); });
+document.addEventListener("keydown", e => { if(e.key === "Escape") closeLb(); });
+
+(function(){
+  const P = SITE.payments, rows = [];
+  if(P.paypal) rows.push('<li><b>PayPal</b> — <a href="' + esc(P.paypal) + '" target="_blank" rel="noopener">pay with PayPal</a></li>');
+  if(P.stripe) rows.push('<li><b>Card</b> — <a href="' + esc(P.stripe) + '" target="_blank" rel="noopener">pay by card (Stripe)</a></li>');
+  if(P.zelle) rows.push('<li><b>Zelle</b> (US only) — ' + esc(P.zelle) + '</li>');
+  if(P.crypto) rows.push('<li><b>Crypto</b> — accepted on request</li>');
+  $("payList").innerHTML = rows.length ? rows.join("") : '<li>Message me about any piece and I’ll send a secure payment invoice.</li>';
+  $("shipText").textContent = P.shipping;
+})();
+render();
+</script>
+</body>
+</html>
